@@ -1,5 +1,39 @@
-<h1>Articles</h1>
-
-
-<%# when you want to let users ad their own blog posts
-<%# <%= link_to "New Article", new_article_path %>
+<div class="container" style="padding-top: 20px">
+  <div class="container" style="text-align: center">
+    <h1>Browse All Articles</h1>
+    <p>Filter through all of our articles to find the best spots to add to your itinerary!</p>
+  </div>
+  <hr>
+  <div class="d-flex justify-content-center">
+    <%= simple_form_for :article, url: articles_path, method: :get, data: { controller: 'autosave' } do |f| %>
+      <div class="d-flex mt-3">
+        <div class="me-5">
+          <h5>Category</h5>
+          <%= f.input :category,
+            as: :radio_buttons,
+            input_html: { class: "category-selector" },
+            item_wrapper_class: 'category-item',
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: ["Festivals", "Cherry Blossoms", "Shrines and Temples"],
+            legend_html: { class: "d-none"}
+             %>
+        </div>
+        <div>
+          <h5>Prefecture</h5>
+          <%= f.input :prefecture,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'prefecture-wrapper',
+            item_wrapper_class: 'prefecture-item',
+            input_html: {class: 'prefecture-selector'},
+            collection: [["Tokyo", 1], ["Kanagawa", 2], ["Saitama", 3]],
+            label: false
+             %>
+        </div>
+     </div>
+  <% end %>
+  </div>
+</div>
