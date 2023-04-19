@@ -5,10 +5,12 @@
   </div>
   <hr>
 
-  <div class="card-articles">
-  <div class="card-articles-infos">
-   <% @articles.each do |article| %>
-      <%= render 'articles/card', article: article %>
-    <% end %>
+<div class="container" style="row justify-content-md-center">
+    <div class="card-articles">
+    <div class="card-articles-infos">
+    <% @articles.each do |article| %>
+        <%= render 'articles/card', article: article %>
+      <% end %>
+    </div>
   </div>
 </div>
