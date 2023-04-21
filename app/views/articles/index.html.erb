@@ -5,12 +5,32 @@
   </div>
   <hr>
 
-<div class="container" style="row justify-content-md-center">
-    <div class="card-articles">
-    <div class="card-articles-infos">
-    <% @articles.each do |article| %>
-        <%= render 'articles/card', article: article %>
-      <% end %>
-    </div>
+
+
+<h1>Articles</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Write Your Own Article!", new_article_path %>
+
+
+<%# ARTICLE CARDS %>
+<div class="cards" style="height: 200px">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
   </div>
 </div>
