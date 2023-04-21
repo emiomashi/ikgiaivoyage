@@ -3,8 +3,6 @@ class Article < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
-  validates :category, presence: true
-  validates :prefecture, presence: true
+  validates :title, :category, :prefecture, presence: true
 end
