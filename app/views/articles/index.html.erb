@@ -4,48 +4,23 @@
     <p>Filter through all of our articles to find the best spots to add to your itinerary!</p>
   </div>
   <hr>
-
-
-<%# SEARCH BAR %>
-
-<div class="container">
-  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-    <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-      </button>
+  <%# SEARCH BAR %>
+  <div class="container" style="display: flex; justify-content: center; margin-top: 20px">
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <%= link_to "Write Your Own Article!", new_article_path %>
+  <%# ARTICLE CARDS %>
+  <div class="cards" style="height: 200px">
+    <div class="card-category" img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+      <% @articles.each do |article| %>
+        <%= render 'articles/card', article: article %>
+      <% end %>
     </div>
-  </form>
-</div>
-
-
-
-<h1>Articles</h1>
-
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Write Your Own Article!", new_article_path %>
-
-
-
-<%# ARTICLE CARDS %>
-
-<div class="cards" style="height: 200px">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
   </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
-</div>
