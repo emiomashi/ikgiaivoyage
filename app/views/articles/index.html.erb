@@ -15,9 +15,8 @@
       </div>
     </form>
   </div>
-  <%= link_to "Write Your Own Article!", new_article_path %>
   <%# ARTICLE CARDS %>
-  <div class="cards" style="height: 200px">
+  <div class="cards" style="height: 200px; margin-top: 40px">
     <div class="card-category" img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
       <% @articles.each do |article| %>
         <%= render 'articles/card', article: article %>
