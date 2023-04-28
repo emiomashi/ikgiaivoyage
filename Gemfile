@@ -50,6 +50,8 @@ gem 'simple_form'
 
 gem 'bootstrap', '~> 5.3.0.alpha3'
 
+gem 'cloudinary'
+
 gem "font-awesome-sass", "~> 6.1"
 
 gem 'jquery-rails'
