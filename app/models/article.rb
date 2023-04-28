@@ -6,6 +6,7 @@ class Article < ApplicationRecord
   end
 
   has_many :comments, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
   validates :body, presence: true, length: { minimum: 10 }
