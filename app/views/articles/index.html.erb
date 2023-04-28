@@ -4,31 +4,3 @@
     <p>Filter through all of our articles to find the best spots to add to your itinerary!</p>
   </div>
   <hr>
-  <%# SEARCH BAR %>
- <div class="banner-footer">
-    <%= form_with url: articles_path, method: :get, class: "d-flex banner-footer banner-footer-searchbar" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find an experience"
-      %>
-    <%= submit_tag "Search", class: "btn btn-info" %>
-    <% end %>
-    </div>
-    </div>
-  <%# ARTICLE CARDS %>
-<div class="cards" style="flex-grow: 1; margin-right: 8px;">
-      <% if @articles.any? %>
-      <% @articles.each do |article| %>
-        <div class="card-display-box">
-          <%= link_to '', article_path(article), class: 'card-display-link'  %>
-          <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= article.photo.attached? ? cl_image_path(article.photo.key) : image_path("turtle.jpg") %>)">
-            <%= article.title %>
-          </div>
-        </div>
-      <% end %>
-       <% else %>
-        <h2>No results found for <em><%= params[:query] %></em> </h2>
-        <p>We couldn't find <em><%= params[:query] %></em>.Try searching again</p>
-    <% end %>
-    </div>
