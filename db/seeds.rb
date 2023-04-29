@@ -8,12 +8,13 @@
 
 
 
-Article.create(
-  title: "Golden Takoyaki",
-  body: "Golden Takoyaki from Kanazawa",
-  category: "Food",
-  prefecture: "Kanazawa",
-  status: public,
-image.attach(io: File.open('../golden_takoyaki.png'), filename: 'takoyaki.png', content_type: 'image/png')
-)
+# Article.create(
+#   title: "Golden Takoyaki",
+#   body: "Golden Takoyaki from Kanazawa",
+#   category: "Food",
+#   prefecture: "Kanazawa",
+#   status: public,
+# )
+# photo.attach(io: File.open('../golden_takoyaki.png'), filename: 'takoyaki.png', content_type: 'image/png')
+
 # article.save!
