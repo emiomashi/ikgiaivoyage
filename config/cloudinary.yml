@@ -1,0 +1,18 @@
+development:
+  cloud_name: djzlw5vnt
+  api_key: '936436244867694'
+  api_secret: "-UNbjgWYYRfHOGw7HpaqWro7LAQQ"
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: djzlw5vnt
+  api_key: '936436244867694'
+  api_secret: "-UNbjgWYYRfHOGw7HpaqWro7LAQQ"
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: djzlw5vnt
+  api_key: '936436244867694'
+  api_secret: "-UNbjgWYYRfHOGw7HpaqWro7LAQQ"
+  enhance_image_tag: true
+  static_file_support: false
