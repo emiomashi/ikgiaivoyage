@@ -54,6 +54,8 @@ gem 'cloudinary'
 
 gem 'devise'
 
+gem 'ransack'
+
 gem "font-awesome-sass", "~> 6.1"
 
 gem 'jquery-rails'
