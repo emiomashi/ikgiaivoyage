@@ -7,8 +7,12 @@
       <tbody>
         <% @articles.each do |article| %>
         <tr>
-          <td><%= article.photo %></td>
           <td><%= link_to article.title, article%></td>
+          <% if @article.photo.attached? %>
+            <%= image_tag @article.photo.key, class: "col-sm-6 h-50 p-2 w-100"%>
+          <% else %>
+            <%= image_tag "golden.png", class: "col-sm-6 h-50 p-2 w-100"%>
+          <% end %>
           <td><%= article.body.truncate_words(25)%></td>
         </tr>
       <% end %>
