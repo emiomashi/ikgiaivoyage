@@ -7,7 +7,7 @@ class Article < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  has_one_attached :image
+  has_one_attached :photo
 
   validates :body, presence: true, length: { minimum: 10 }
   validates :title, :category, :prefecture, presence: true
